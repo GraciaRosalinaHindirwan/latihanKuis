@@ -106,7 +106,7 @@ class Login extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: (){
-                      // aksi login disini
+                      // aksi login
                     }, 
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
