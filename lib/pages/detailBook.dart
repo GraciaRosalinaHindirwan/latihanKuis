@@ -139,6 +139,8 @@ class Detailbook extends StatelessWidget {
                           Text(
                             book.publisher,
                             textAlign: TextAlign.center, 
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: 14, 
                               fontWeight: FontWeight.w600,
