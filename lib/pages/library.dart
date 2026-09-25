@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_kuis/pages/detailBook.dart';
 import 'package:latihan_kuis/pages/login.dart';
 import 'package:latihan_kuis/theme/appColors.dart';
 import 'package:latihan_kuis/models/bookModels.dart';
@@ -72,7 +73,7 @@ class Library extends StatelessWidget {
                           Navigator.push(
                             context, 
                             MaterialPageRoute(
-                              builder: (context) => Login(),
+                              builder: (context) => Detailbook(book: bookList[index]),
                             ),
                           ); 
                         },
