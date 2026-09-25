@@ -1,8 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_kuis/pages/library.dart';
 import 'package:latihan_kuis/theme/appColors.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final TextEditingController emailController = TextEditingController(); 
+  final TextEditingController passwordController = TextEditingController(); 
+
+  void login(){
+    if(emailController.text == "gracia@gmail.com" && passwordController.text == "12345678"){
+      Navigator.pushReplacement(
+        context, 
+        MaterialPageRoute(
+          builder: (context) => Library(),
+        ),
+      );
+    } else{
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: AppColors.primary,
+          content: Text("username dan password tidak sesuai", 
+            style: TextStyle(
+              color: AppColors.background, 
+            ),
+          ),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +74,7 @@ class Login extends StatelessWidget {
                 Column(
                   children: [
                     TextField(
+                      controller: emailController,
                       decoration: InputDecoration(
                         labelText: 'Email',
                         filled: true,
@@ -72,6 +104,7 @@ class Login extends StatelessWidget {
 
                     TextField(
                       obscureText: true,
+                      controller: passwordController,
                       decoration: InputDecoration(
                         labelText: 'Password',
                         filled: true,
@@ -106,7 +139,7 @@ class Login extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: (){
-                      // aksi login
+                      login(); 
                     }, 
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
