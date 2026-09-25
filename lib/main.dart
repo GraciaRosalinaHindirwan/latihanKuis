@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_kuis/pages/library.dart';
 import 'package:latihan_kuis/pages/login.dart';
 
 void main() {
